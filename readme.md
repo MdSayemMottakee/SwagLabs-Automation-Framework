@@ -112,6 +112,3 @@ You may encounter these in the console; they **do not** affect test results:
 * `Unable to find CDP implementation...`: Occurs when the Selenium version is slightly ahead/behind the Chrome version.
 
 ---
-
-**Author:** BURT
-*Built for QA Automation practice and portfolio development.*
