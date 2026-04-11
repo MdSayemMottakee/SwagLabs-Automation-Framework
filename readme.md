@@ -1,271 +1,117 @@
-```md
 # 🚀 Selenium Automation Framework – SwagLabs (SauceDemo)
 
 ## 📌 Overview
 
-This project is a **UI Automation Testing Framework** built using **Selenium WebDriver, Java, TestNG, and Maven**. It automates end-to-end testing of an e-commerce demo application:
+This project is a **UI Automation Testing Framework** built using **Selenium WebDriver, Java, TestNG, and Maven**. It automates end-to-end testing of the SauceDemo e-commerce application.
 
-👉 https://www.saucedemo.com/
+**Target Site:** [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
 The framework follows the **Page Object Model (POM)** design pattern to ensure scalability, maintainability, and reusability.
 
 ---
 
-# 🧠 What is Selenium?
+## 🧠 What is Selenium?
 
-**Selenium** is an open-source automation testing tool used to automate web applications across different browsers and platforms.
+**Selenium** is an open-source automation testing tool used to automate web applications across different browsers and platforms. It is widely used in QA automation to simulate real user interactions like clicking buttons, entering text, and validating UI behavior.
 
-It is widely used in QA automation to simulate real user interactions like clicking buttons, entering text, and validating UI behavior.
-
----
-
-## 🔹 Why Selenium?
-
-- Open-source and free
-- Supports multiple browsers (Chrome, Firefox, Edge)
-- Supports multiple programming languages (Java, Python, C#, etc.)
-- Strong community support
-- Widely used in industry for UI automation
+### 🔹 Selenium Components
+* **Selenium WebDriver** → Core automation API for browser interaction.
+* **Selenium Grid** → Enables parallel execution across different machines/OS.
+* **Selenium IDE** → A record-and-playback tool for quick prototyping.
 
 ---
 
-## 🔹 Selenium Components
+## 🏗️ Framework Architecture
 
-- **Selenium WebDriver** → Core automation API
-- **Selenium Grid** → Parallel execution across machines
-- **Selenium IDE** → Record and playback tool
-
----
-
-# 🎯 Project Objective
-
-The goal of this project is to automate the main workflows of an e-commerce application:
-
-✔ Login functionality  
-✔ Product selection  
-✔ Add to cart  
-✔ Cart validation  
-✔ Checkout process  
-✔ Order completion  
-
----
-
-# 🏗️ Framework Architecture
-
-This project uses the **Page Object Model (POM)** design pattern.
+This project uses the **Page Object Model (POM)**. This design pattern creates an object repository for web elements, reducing code duplication and improving test maintenance.
 
 ### 📁 Project Structure
 
-```
-
+```text
 SwagLabs-Automation/
 │
 ├── src/test/java/
 │   ├── base/          # BaseTest (WebDriver setup & teardown)
-│   ├── pages/         # Page classes (POM classes)
-│   ├── tests/         # Test cases (TestNG tests)
-│   ├── utils/         # Utility classes (future use)
+│   ├── pages/         # Page classes (Locators & Actions)
+│   ├── tests/         # TestNG test cases
+│   └── utils/         # Helper & Utility classes
 │
 ├── testng.xml         # Test suite configuration
 ├── pom.xml            # Maven dependencies
 └── README.md
-
-````
+```
 
 ---
 
-# 🧱 Tech Stack
+## 🧱 Tech Stack
 
 | Tool | Purpose |
-|------|--------|
-| Java | Programming language |
-| Selenium WebDriver | Browser automation |
-| TestNG | Test framework |
-| Maven | Dependency management |
-| IntelliJ IDEA | Development IDE |
+| :--- | :--- |
+| **Java** | Programming Language |
+| **Selenium WebDriver** | Browser Automation |
+| **TestNG** | Test Execution & Assertions |
+| **Maven** | Dependency Management |
+| **IntelliJ IDEA** | Development IDE |
 
 ---
 
-# ⚙️ Setup Instructions
+## ⚙️ Setup & Installation
 
-## 1️⃣ Prerequisites
+### 1️⃣ Prerequisites
+Ensure you have the following installed:
+* **Java JDK 17+**
+* **Maven**
+* **Google Chrome Browser**
 
-Make sure you have installed:
-
-- Java JDK 17+
-- Maven
-- IntelliJ IDEA
-- Google Chrome Browser
-
----
-
-## 2️⃣ Clone Repository
-
+### 2️⃣ Clone & Import
 ```bash
-git clone https://github.com/your-username/swaglabs-automation.git
-````
+# Clone the repository
+git clone [https://github.com/your-username/swaglabs-automation.git](https://github.com/your-username/swaglabs-automation.git)
 
----
-
-## 3️⃣ Import Project
-
-* Open IntelliJ IDEA
-* Click **Open Project**
-* Select the project folder
-* Wait for Maven to download dependencies
-
----
-
-## 4️⃣ Install Dependencies
-
-Maven will automatically download all required libraries from `pom.xml`.
-
-If needed, run:
-
-```bash
-mvn clean install
+# Navigate to directory
+cd swaglabs-automation
 ```
+1. Open **IntelliJ IDEA**.
+2. Select **Open** and choose the project folder.
+3. Allow Maven to download dependencies (or run `mvn clean install` in the terminal).
 
 ---
 
-# 🚀 How to Run Tests
+## 🚀 Running the Tests
 
-## ▶️ Option 1: Run from IntelliJ
-
-* Open `testng.xml`
-* Right-click → Run
-
----
-
-## ▶️ Option 2: Run Test Classes
-
-* Right-click any test class (LoginTest, ProductTest, etc.)
-* Click **Run**
+| Method | Command / Action |
+| :--- | :--- |
+| **Maven (Terminal)** | `mvn test` |
+| **TestNG Suite** | Right-click `testng.xml` → **Run** |
+| **Specific Test** | Right-click a class in `src/test/java/tests/` → **Run** |
 
 ---
 
-## ▶️ Option 3: Run via Maven
+## 🧪 Test Scenarios Covered
 
-```bash
-mvn test
-```
-
----
-
-# 🧪 Test Scenarios Covered
-
-## 🔐 Login Module
-
-* Valid login
-* Invalid login
-* Locked user validation
+* **🔐 Login:** Valid/Invalid credentials and locked-out user checks.
+* **📦 Products:** Visibility, sorting, and adding items to the cart.
+* **🛒 Cart:** Item verification and removal.
+* **💳 Checkout:** Form submission and order success validation.
 
 ---
 
-## 📦 Product Module
+## 📊 Reporting & Future Roadmap
 
-* Product list visibility
-* Add product to cart
-* Validate cart count
-
----
-
-## 🛒 Cart Module
-
-* Open cart
-* Verify items in cart
-* Remove items from cart
+Currently, the framework uses **TestNG default reports**. Future enhancements include:
+* ✅ **Extent Reports:** Interactive HTML dashboards.
+* ✅ **Screenshots:** Automatic capture on test failure.
+* ✅ **CI/CD:** Integration with GitHub Actions or Jenkins.
+* ✅ **Data Driven:** Testing via Excel or JSON files.
 
 ---
 
-## 💳 Checkout Module
-
-* Enter user details
-* Complete checkout process
-* Verify success message
-
----
-
-# 🧠 Framework Design Pattern
-
-## ✔ Page Object Model (POM)
-
-Each page contains:
-
-* Locators
-* Actions
-* Reusable methods
-
-### Example Pages:
-
-* LoginPage.java
-* ProductPage.java
-* CartPage.java
-* CheckoutPage.java
+## ⚠️ Known Non-Blocking Warnings
+You may encounter these in the console; they **do not** affect test results:
+* `SLF4J: Failed to load class...`: Occurs if a specific logger binder is missing.
+* `Unable to find CDP implementation...`: Occurs when the Selenium version is slightly ahead/behind the Chrome version.
 
 ---
 
-# 📊 Reporting
-
-Currently using:
-
-* TestNG default reports
-
-Future improvements:
-
-* Extent Reports (HTML dashboard)
-* Screenshot on failure
-* Allure Reports
-* CI/CD integration
-
----
-
-# ⚠️ Known Warnings (Safe to Ignore)
-
-You may see:
-
-### SLF4J Warning
-
-```
-Failed to load class "org.slf4j.impl.StaticLoggerBinder"
-```
-
-### Chrome CDP Warning
-
-```
-Unable to find CDP implementation matching version
-```
-
-👉 These are **non-blocking warnings** and do not affect test execution.
-
----
-
-# 🚀 Future Enhancements
-
-* Add Extent Reports
-* Add Screenshot on failure
-* Data-driven testing (Excel/JSON)
-* Parallel execution (TestNG)
-* CI/CD integration (Jenkins / GitHub Actions)
-* API + UI combined framework
-
----
-
-# 👨‍💻 Author
-
-This project is built for **Selenium QA Automation practice and portfolio development**.
-
----
-
-# 🎯 Learning Outcome
-
-After completing this project, you will understand:
-
-* Selenium WebDriver basics
-* Real-world automation framework design
-* Page Object Model (POM)
-* TestNG execution flow
-* End-to-end UI automation testing
-
-```
-```
+**Author:** BURT
+*Built for QA Automation practice and portfolio development.*
